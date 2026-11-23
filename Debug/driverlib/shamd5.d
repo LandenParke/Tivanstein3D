@@ -1,0 +1,63 @@
+# FIXED
+
+driverlib/shamd5.obj: ../driverlib/shamd5.c
+driverlib/shamd5.obj: E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h
+driverlib/shamd5.obj: E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/_ti_config.h
+driverlib/shamd5.obj: E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/linkage.h
+driverlib/shamd5.obj: E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdint.h
+driverlib/shamd5.obj: E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/_stdint40.h
+driverlib/shamd5.obj: E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/stdint.h
+driverlib/shamd5.obj: E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/cdefs.h
+driverlib/shamd5.obj: E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_types.h
+driverlib/shamd5.obj: E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_types.h
+driverlib/shamd5.obj: E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
+driverlib/shamd5.obj: E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
+driverlib/shamd5.obj: C:/Users/kingp/OneDrive/uP2/lab3_2025_template/inc/hw_ints.h
+driverlib/shamd5.obj: C:/Users/kingp/OneDrive/uP2/lab3_2025_template/inc/hw_memmap.h
+driverlib/shamd5.obj: C:/Users/kingp/OneDrive/uP2/lab3_2025_template/inc/hw_nvic.h
+driverlib/shamd5.obj: C:/Users/kingp/OneDrive/uP2/lab3_2025_template/inc/hw_shamd5.h
+driverlib/shamd5.obj: C:/Users/kingp/OneDrive/uP2/lab3_2025_template/inc/hw_types.h
+driverlib/shamd5.obj: C:/Users/kingp/OneDrive/uP2/lab3_2025_template/driverlib/debug.h
+driverlib/shamd5.obj: C:/Users/kingp/OneDrive/uP2/lab3_2025_template/driverlib/interrupt.h
+driverlib/shamd5.obj: C:/Users/kingp/OneDrive/uP2/lab3_2025_template/driverlib/shamd5.h
+
+../driverlib/shamd5.c:
+
+E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h:
+
+E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/_ti_config.h:
+
+E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/linkage.h:
+
+E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdint.h:
+
+E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/_stdint40.h:
+
+E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/stdint.h:
+
+E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/cdefs.h:
+
+E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_types.h:
+
+E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_types.h:
+
+E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h:
+
+E:/ti/ccs_install/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
+
+C:/Users/kingp/OneDrive/uP2/lab3_2025_template/inc/hw_ints.h:
+
+C:/Users/kingp/OneDrive/uP2/lab3_2025_template/inc/hw_memmap.h:
+
+C:/Users/kingp/OneDrive/uP2/lab3_2025_template/inc/hw_nvic.h:
+
+C:/Users/kingp/OneDrive/uP2/lab3_2025_template/inc/hw_shamd5.h:
+
+C:/Users/kingp/OneDrive/uP2/lab3_2025_template/inc/hw_types.h:
+
+C:/Users/kingp/OneDrive/uP2/lab3_2025_template/driverlib/debug.h:
+
+C:/Users/kingp/OneDrive/uP2/lab3_2025_template/driverlib/interrupt.h:
+
+C:/Users/kingp/OneDrive/uP2/lab3_2025_template/driverlib/shamd5.h:
+

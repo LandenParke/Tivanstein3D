@@ -1,0 +1,96 @@
+uP2 lab 4
+
+part a 
+1. tcb_t
+	which semaphore blocked on (0 when not) x
+	priority x
+	alive bool x 
+	asleep bool x
+	time to wake up x 
+	name x
+	id int x
+2. semaphore functions
+waitsemaphore
+	requests resource, not available? block x
+signalsemaphore
+	check blocked queue, size > 0? unblock, else semaphore + 1 x
+scheduler
+	no change needed cuz im goated and use different data structures x
+prevent deadlocks x
+3. sleeping x
+sleep
+	input: some number of quanta, sets current process to awake at systime + quanta, yields x
+systick handler
+	check for functions that need to be waken up x
+4. priority
+scheduler, new min heap alive auto does this x
+add thread, adds to alive x
+
+part b
+1. interprocess communication
+initfifo x 
+readfifo x 
+writefifo x 
+
+g8rtos_fifo_t x
+	uint32_t buffer[maxsize] x 
+	uint32_t * head
+	uint32_t * tail
+	uint32_t lostdata
+	semaphore_t current_size
+	semaphore_t mutex
+
+demo requirement week1:
+If thread is blocked or slept next thread runs immediately x
+Once semaphore is singaled a blocked thread can be run  x
+Data pushed by a thread into a fifo can be read by another thread x
+
+
+WEEK 2:
+partc
+1. KILL YOURSELF
+	AddThread  x
+		should take in a string for name x
+		Critical section x
+	Kill  x
+		take in id
+		kill id
+		boundary conditions
+			no thread with id exists x 
+			only one thread runningx 
+		critical section
+		How do we release resources? DONT WORRY ABOUT IT
+		How does killing actually work
+			Mark of death THIS WITH LINKED LIST, MINHEAP COOKED
+				In this case a threads tcb will have its alive set to false
+				When this happens, anytime a thread that is not alive is 
+				read in a switch we must not add it back
+					How does this work with adding threads though?
+					We must make it so after killing a thread you can immediately readd a thread
+					This complicates things
+					TO MUCH, SWITCH TO LINKED LIST
+	killself x
+		thread stops running and frees up space in tcb list
+2. Events
+Aperiodic
+	Add thread
+		Inputs
+			interrupt assignment
+			thread
+				threadhandler / intterupt handler
+					we could have one function handler that calls add thread
+			id
+			priority
+			string
+			ALL TCB_T VARIABLES DEFINED IN HANDLER
+
+	On interrupt, trigger handler to add a thread
+	End of aperiodic thread kills itself
+Periodic
+	Seperate linkedlist with tcb 
+	execution time (When the event is ran for the first time)
+	Period (Number of ticks until next execution)
+	function to be run
+	Prioritize these over Ap[eridoic]
+	Run the most frequent periodic thread if SystemTime > ExecutionTime
+	Otherwise run normal thread
