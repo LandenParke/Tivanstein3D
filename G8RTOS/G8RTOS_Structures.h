@@ -43,7 +43,7 @@ typedef int32_t threadID_t;
  * */
 typedef struct tcb_t {
     // your stuff goes here
-    int32_t * sp;
+    uint32_t * sp;
     uint8_t priority;
     uint32_t last_ran;
     char name[MAX_NAME_LENGTH];

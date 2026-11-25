@@ -22,6 +22,8 @@
 "./MultimodDrivers/src/multimod_joystick.obj"
 "./MultimodDrivers/src/multimod_spi.obj"
 "./MultimodDrivers/src/multimod_uart.obj"
+"./Tivanstein/src/ts_map.obj"
+"./Tivanstein/src/ts_player.obj"
 "../tm4c123gh6pm.cmd"
 -llibc.a
 -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"

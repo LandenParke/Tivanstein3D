@@ -114,20 +114,7 @@ static void G8RTOS_DumbThreadInit(void) {
     EndCriticalSection(status);
 }
 
-static void G8RTOS_AvailableThreadsInit(void) {
-    G8RTOS_InitFIFO(available_threads);
-    for (int i = 0; i < MAX_THREADS; i++) {
-        G8RTOS_WriteFIFO(available_threads, (uint32_t)(&tcb_array[i]));
-    }
-}
-static void G8RTOS_AddAvailableThread(tcb_t *thread) {
-    // G8RTOS_WriteFIFO(available_threads, (uint32_t)(thread)); // if this worked thatd be awesome but im a stupid chud
-    
-}
-
 static tcb_t* G8RTOS_GetAvailableThread(void) {
-    // tcb_t* empty_thread = (tcb_t*)(G8RTOS_ReadFIFO(available_threads));
-    // return empty_thread;
     tcb_t* thread = NULL;
     for (int i = 0; i < MAX_THREADS; i++) {
         if (!tcb_array[i].alive) {
@@ -169,6 +156,7 @@ static tcb_t* G8RTOS_IDSearch(threadID_t id) {
     return thread;
 }
 
+/*
 static uint32_t G8RTOS_GetNumReady(void) {
     uint32_t num = 0;
     for (int i = 0; i < MAX_THREADS; i++) {
@@ -178,6 +166,7 @@ static uint32_t G8RTOS_GetNumReady(void) {
     }
     return num;
 }
+    */
 
 static void G8RTOS_ContextSwitch(void) {
     HWREG(NVIC_INT_CTRL) |= NVIC_INT_CTRL_PEND_SV;
@@ -402,7 +391,6 @@ sched_ErrCode_t G8RTOS_KillSelf(void) {
     // if (G8RTOS_GetNumReady() == 1) return CANNOT_KILL_LAST_THREAD;
     uint32_t status = StartCriticalSection();
     CurrentlyRunningThread->alive = false;
-    // G8RTOS_AddAvailableThread(CurrentlyRunningThread);
     num_threads--;
     G8RTOS_ContextSwitch();
     EndCriticalSection(status);

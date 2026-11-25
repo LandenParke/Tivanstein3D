@@ -14,7 +14,6 @@ MultimodDrivers/src/multimod_buttons.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cg
 MultimodDrivers/src/multimod_buttons.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
 MultimodDrivers/src/multimod_buttons.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h
 MultimodDrivers/src/multimod_buttons.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h
-MultimodDrivers/src/multimod_buttons.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h
 MultimodDrivers/src/multimod_buttons.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memmap.h
 MultimodDrivers/src/multimod_buttons.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_gpio.h
 MultimodDrivers/src/multimod_buttons.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h
@@ -51,8 +50,6 @@ C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h:
-
-C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memmap.h:
 

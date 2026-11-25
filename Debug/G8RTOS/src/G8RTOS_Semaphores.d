@@ -23,7 +23,6 @@ G8RTOS/src/G8RTOS_Semaphores.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memma
 G8RTOS/src/G8RTOS_Semaphores.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_gpio.h
 G8RTOS/src/G8RTOS_Semaphores.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/i2c.h
 G8RTOS/src/G8RTOS_Semaphores.obj: ../MultimodDrivers/multimod_BMI160.h
-G8RTOS/src/G8RTOS_Semaphores.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h
 G8RTOS/src/G8RTOS_Semaphores.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h
 G8RTOS/src/G8RTOS_Semaphores.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_i2c.h
 G8RTOS/src/G8RTOS_Semaphores.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h
@@ -82,8 +81,6 @@ C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_gpio.h:
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/i2c.h:
 
 ../MultimodDrivers/multimod_BMI160.h:
-
-C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h:
 

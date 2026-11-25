@@ -25,8 +25,12 @@ static void Multimod_Init() {
     JOYSTICK_Init();
     JOYSTICK_IntEnable();
     ST7789_Init();
+    SysCtlDelay(300);
 
+    ST7789_Fill(ST7789_GREEN);
+    SysCtlDelay(300);
     ST7789_Fill(ST7789_BLACK);
+    SysCtlDelay(300);
 
     //BME2028_Init();
 }

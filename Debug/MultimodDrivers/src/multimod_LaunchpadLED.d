@@ -15,7 +15,6 @@ MultimodDrivers/src/multimod_LaunchpadLED.obj: C:/ti/ccs1281/ccs/tools/compiler/
 MultimodDrivers/src/multimod_LaunchpadLED.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h
 MultimodDrivers/src/multimod_LaunchpadLED.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h
 MultimodDrivers/src/multimod_LaunchpadLED.obj: ../G8RTOS/G8RTOS_CriticalSection.h
-MultimodDrivers/src/multimod_LaunchpadLED.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h
 MultimodDrivers/src/multimod_LaunchpadLED.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h
 MultimodDrivers/src/multimod_LaunchpadLED.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memmap.h
 MultimodDrivers/src/multimod_LaunchpadLED.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_gpio.h
@@ -52,8 +51,6 @@ C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h:
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h:
 
 ../G8RTOS/G8RTOS_CriticalSection.h:
-
-C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h:
 

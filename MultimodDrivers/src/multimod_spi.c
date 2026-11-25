@@ -11,8 +11,8 @@
 #include <driverlib/sysctl.h>
 #include <driverlib/pin_map.h>
 
-#include <inc/tm4c123gh6pm.h>
 #include <inc/hw_ssi.h>
+#include <inc/hw_types.h>
 
 /********************************Public Functions***********************************/
 
@@ -38,7 +38,7 @@ void SPI_Init(uint32_t mod) {
 
         SSIDisable(mod);
         SSIClockSourceSet(mod, SSI_CLOCK_SYSTEM);
-        SSIConfigSetExpClk(SSI0_BASE, SysCtlClockGet(), SSI_FRF_MOTO_MODE_3, SSI_MODE_MASTER, 15000000, 8);
+        SSIConfigSetExpClk(mod, SysCtlClockGet(), SSI_FRF_MOTO_MODE_3, SSI_MODE_MASTER, 20000000, 8);
         SSIEnable(mod);
     }
 }
@@ -52,9 +52,15 @@ void SPI_Init(uint32_t mod) {
 // Param uint8_t "byte": byte to send
 // Return: void
 void SPI_WriteSingle(uint32_t mod, uint8_t byte) {
-    SSIDataPut(mod, byte);
-    while(SSIBusy(mod));
-    return;
+    while (!(HWREG(mod + SSI_O_SR) & SSI_SR_TNF));
+    HWREG(mod + SSI_O_DR) = byte;
+}
+
+void SPI_Flush(uint32_t mod) {
+    while (HWREG(mod + SSI_O_SR) & SSI_SR_BSY);
+    while (HWREG(mod + SSI_O_SR) & SSI_SR_RNE) {
+        (void)HWREG(mod + SSI_O_DR);
+    }
 }
 
 // SPI_ReadSingle
@@ -64,9 +70,9 @@ void SPI_WriteSingle(uint32_t mod, uint8_t byte) {
 uint8_t SPI_ReadSingle(uint32_t mod) {
     uint32_t result = 0;
 
+    SPI_Flush(mod);              // discard stale RX bytes from earlier writes
     SSIDataPut(mod, 0x00);
-    while(SSIBusy(mod));
-
+    while (SSIBusy(mod));
     SSIDataGet(mod, &result);
 
     return result;

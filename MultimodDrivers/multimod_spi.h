@@ -49,6 +49,7 @@ void SPI_SetMode(uint32_t mod, uint8_t mode);
 uint8_t SPI_ReadSingle(uint32_t mod);
 void SPI_WriteMultiple(uint32_t mod, uint32_t* data, uint8_t num_bytes);
 void SPI_ReadMultiple(uint32_t mod, uint32_t* data, uint8_t num_bytes);
+void SPI_Flush(uint32_t mod);
 
 /********************************Public Functions***********************************/
 

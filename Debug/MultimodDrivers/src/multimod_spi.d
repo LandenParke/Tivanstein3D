@@ -19,8 +19,8 @@ MultimodDrivers/src/multimod_spi.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverli
 MultimodDrivers/src/multimod_spi.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h
 MultimodDrivers/src/multimod_spi.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h
 MultimodDrivers/src/multimod_spi.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/pin_map.h
-MultimodDrivers/src/multimod_spi.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h
 MultimodDrivers/src/multimod_spi.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ssi.h
+MultimodDrivers/src/multimod_spi.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h
 
 ../MultimodDrivers/src/multimod_spi.c:
 
@@ -60,7 +60,7 @@ C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/pin_map.h:
 
-C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h:
-
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ssi.h:
+
+C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h:
 

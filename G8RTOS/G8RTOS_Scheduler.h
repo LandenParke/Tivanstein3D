@@ -83,7 +83,7 @@ void SysTick_Handler();
 void G8RTOS_Sleep(uint32_t system_ticks);
 sched_ErrCode_t G8RTOS_KillThread(threadID_t id);
 sched_ErrCode_t G8RTOS_KillSelf(void);
-sched_ErrCode_t G8RTOS_Add_APeriodicEvent(void (*threadHandler)(void), uint32_t interrupt, uint8_t priority);
+sched_ErrCode_t G8RTOS_Add_APeriodicEvent(void (*threadHandler)(void), uint32_t IRQn, uint8_t priority);
 sched_ErrCode_t G8RTOS_Add_PeriodicEvent(uint32_t execution_time, uint32_t period, void (*threadToAdd)(void));
 
 /********************************Public Functions***********************************/

@@ -116,4 +116,5 @@ G8RTOS/src \
 MiscFunctions/LinAlg/src \
 MiscFunctions/Shapes/src \
 MultimodDrivers/src \
+Tivanstein/src \
 

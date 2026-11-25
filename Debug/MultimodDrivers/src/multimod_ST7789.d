@@ -17,13 +17,15 @@ MultimodDrivers/src/multimod_ST7789.obj: ../MultimodDrivers/multimod_spi.h
 MultimodDrivers/src/multimod_ST7789.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memmap.h
 MultimodDrivers/src/multimod_ST7789.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_gpio.h
 MultimodDrivers/src/multimod_ST7789.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ssi.h
-MultimodDrivers/src/multimod_ST7789.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h
 MultimodDrivers/src/multimod_ST7789.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h
 MultimodDrivers/src/multimod_ST7789.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ssi.h
 MultimodDrivers/src/multimod_ST7789.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h
 MultimodDrivers/src/multimod_ST7789.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h
 MultimodDrivers/src/multimod_ST7789.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/uart.h
 MultimodDrivers/src/multimod_ST7789.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/pin_map.h
+MultimodDrivers/src/multimod_ST7789.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/math.h
+MultimodDrivers/src/multimod_ST7789.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/_defs.h
+MultimodDrivers/src/multimod_ST7789.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_limits.h
 
 ../MultimodDrivers/src/multimod_ST7789.c:
 
@@ -59,8 +61,6 @@ C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_gpio.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ssi.h:
 
-C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h:
-
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ssi.h:
@@ -72,4 +72,10 @@ C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h:
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/uart.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/pin_map.h:
+
+C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/math.h:
+
+C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/_defs.h:
+
+C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_limits.h:
 

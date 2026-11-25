@@ -9,7 +9,6 @@
 
 #include "../multimod_spi.h"
 
-#include <inc/tm4c123gh6pm.h>
 #include <inc/hw_types.h>
 #include <inc/hw_memmap.h>
 #include <inc/hw_ssi.h>
@@ -20,6 +19,8 @@
 #include <driverlib/uart.h>
 #include <driverlib/pin_map.h>
 
+#include <math.h>
+
 /***********************************Macro Defines***********************************/
 #ifndef _swap_int16_t
 #define _swap_int16_t(a, b) \
@@ -29,6 +30,8 @@
     b = t; \
 }
 #endif
+
+static float PI = 3.1415926535;
 
 /********************************Private Functions**********************************/
 
@@ -43,6 +46,7 @@ void ST7789_Select(void) {
 // Deselects the ST7789 for SPI transmission.
 // Return: void
 void ST7789_Deselect(void) {
+    SPI_Flush(SPI_A_BASE);
     GPIOPinWrite(ST7789_PIN_PORT_BASE, ST7789_CS_PIN, 0xFF);
 }
 
@@ -66,8 +70,10 @@ void ST7789_SetCommand(void) {
 // Param uint8_t "cmd": command register to send data to.
 // Return: void
 void ST7789_WriteCommand(uint8_t cmd) {
+    SPI_Flush(SPI_A_BASE);
     ST7789_SetCommand();
     SPI_WriteSingle(SPI_A_BASE, cmd);
+    SPI_Flush(SPI_A_BASE);
     ST7789_SetData();
 }
 
@@ -240,6 +246,23 @@ void delay_ms(uint32_t ms) {
     SysCtlDelay((SysCtlClockGet() / (3 * 1000)) * ms + 1);
 }
 
+static void ST7789_Run(int16_t a0, int16_t a1, int16_t fixed, bool horiz, uint16_t color)
+{
+    int16_t lo = (a0 < a1) ? a0 : a1;
+    int16_t n  = abs(a1 - a0) + 1;
+    int16_t x, y, w, h;
+
+    if (horiz) { x = lo; y = fixed; w = n; h = 1; }
+    else       { x = fixed; y = lo; w = 1; h = n; }
+
+    if (x < 0) { w += x; x = 0; }
+    if (y < 0) { h += y; y = 0; }
+    if (x + w > X_MAX) w = X_MAX - x;
+    if (y + h > Y_MAX) h = Y_MAX - y;
+    if (w <= 0 || h <= 0) return;
+
+    ST7789_DrawRectangle(x, y, w, h, color);
+}
 
 /********************************Public Functions***********************************/
 
@@ -278,15 +301,9 @@ void ST7789_Init() {
     ST7789_WriteData((Y_MAX >> 8 & 0xFF));
     ST7789_WriteData((Y_MAX >> 0 & 0xFF));
 
-    ST7789_WriteCommand(ST7789_CASET_ADDR);
-    ST7789_WriteData(0x00);
-    ST7789_WriteData(0x00);
-    ST7789_WriteData((X_MAX >> 8 & 0xFF));
-    ST7789_WriteData((X_MAX >> 0 & 0xFF));
-
-    // set column address order right to left, line address order bottom to top
+    // set column address order right to left, line address order bottom to top - idk what this saying but we changing it
     ST7789_WriteCommand(ST7789_MADCTL_ADDR);
-    ST7789_WriteData(0b01001000);
+    ST7789_WriteData(0b10001000);
 
     ST7789_WriteCommand(ST7789_NORON_ADDR);
     delay_ms(120);
@@ -370,5 +387,41 @@ void ST7789_DrawRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16
         ST7789_WriteData(color_lo);
     }
     ST7789_Deselect();
+}
+
+void ST7789_DrawAngledLine(uint16_t x, uint16_t y, float angle, uint16_t length, uint16_t color)
+{
+    int16_t x0 = x, y0 = y;
+    int16_t x1 = x0 + (int16_t)(cosf(angle) * length);
+    int16_t y1 = y0 + (int16_t)(sinf(angle) * length);
+    int16_t dx = abs(x1 - x0), dy = abs(y1 - y0);
+    int16_t sx = (x0 < x1) ? 1 : -1;
+    int16_t sy = (y0 < y1) ? 1 : -1;
+
+    if (dx >= dy) { /* shallow: horizontal runs */
+        int16_t err = dx / 2, rs = x0, cx = x0, cy = y0;
+        for (int16_t i = 0; i < dx; i++) {
+            err -= dy;
+            if (err < 0) {
+                ST7789_Run(rs, cx, cy, true, color);
+                cy += sy; err += dx; cx += sx; rs = cx;
+            } else {
+                cx += sx;
+            }
+        }
+        ST7789_Run(rs, cx, cy, true, color);
+    } else {        /* steep: vertical runs */
+        int16_t err = dy / 2, rs = y0, cy = y0, cx = x0;
+        for (int16_t i = 0; i < dy; i++) {
+            err -= dx;
+            if (err < 0) {
+                ST7789_Run(rs, cy, cx, false, color);
+                cx += sx; err += dy; cy += sy; rs = cy;
+            } else {
+                cy += sy;
+            }
+        }
+        ST7789_Run(rs, cy, cx, false, color);
+    }
 }
 

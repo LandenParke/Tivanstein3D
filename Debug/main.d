@@ -24,7 +24,6 @@ main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memmap.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_gpio.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/i2c.h
 main.obj: ../MultimodDrivers/multimod_BMI160.h
-main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_i2c.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h
@@ -40,6 +39,10 @@ main.obj: ../MultimodDrivers/multimod_ST7789.h
 main.obj: ../threads.h
 main.obj: ../G8RTOS/G8RTOS_IPC.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/fpu.h
+main.obj: ../Tivanstein/inc/ts.h
+main.obj: ../Tivanstein/inc/ts_map.h
+main.obj: ../Tivanstein/inc/ts_G8RTOS.h
+main.obj: ../Tivanstein/inc/ts_player.h
 
 ../main.c:
 
@@ -89,8 +92,6 @@ C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/i2c.h:
 
 ../MultimodDrivers/multimod_BMI160.h:
 
-C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h:
-
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_i2c.h:
@@ -120,4 +121,12 @@ C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/uart.h:
 ../G8RTOS/G8RTOS_IPC.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/fpu.h:
+
+../Tivanstein/inc/ts.h:
+
+../Tivanstein/inc/ts_map.h:
+
+../Tivanstein/inc/ts_G8RTOS.h:
+
+../Tivanstein/inc/ts_player.h:
 

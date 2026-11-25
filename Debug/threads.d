@@ -2,7 +2,9 @@
 
 threads.obj: ../threads.c
 threads.obj: ../threads.h
-threads.obj: ../G8RTOS/G8RTOS_Semaphores.h
+threads.obj: ../MultimodDrivers/multimod.h
+threads.obj: ../MultimodDrivers/multimod_uart.h
+threads.obj: ../MultimodDrivers/multimod_i2c.h
 threads.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdint.h
 threads.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/_ti_config.h
 threads.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/linkage.h
@@ -14,15 +16,10 @@ threads.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/mach
 threads.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_stdint.h
 threads.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h
 threads.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h
-threads.obj: ../G8RTOS/G8RTOS_CriticalSection.h
-threads.obj: ../MultimodDrivers/multimod.h
-threads.obj: ../MultimodDrivers/multimod_uart.h
-threads.obj: ../MultimodDrivers/multimod_i2c.h
 threads.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memmap.h
 threads.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_gpio.h
 threads.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/i2c.h
 threads.obj: ../MultimodDrivers/multimod_BMI160.h
-threads.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h
 threads.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h
 threads.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_i2c.h
 threads.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h
@@ -43,9 +40,10 @@ threads.obj: ../MiscFunctions/LinAlg/inc/quaternions.h
 threads.obj: ../MiscFunctions/LinAlg/inc/vect3d.h
 threads.obj: ../MiscFunctions/LinAlg/inc/linalg.h
 threads.obj: ../G8RTOS/G8RTOS_IPC.h
+threads.obj: ../G8RTOS/G8RTOS_Semaphores.h
+threads.obj: ../G8RTOS/G8RTOS_CriticalSection.h
 threads.obj: ../G8RTOS/G8RTOS_Scheduler.h
 threads.obj: ../G8RTOS/G8RTOS_Structures.h
-threads.obj: ../stb_bitwise.h
 threads.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdio.h
 threads.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdarg.h
 threads.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdlib.h
@@ -57,7 +55,11 @@ threads.obj: C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/xloc
 
 ../threads.h:
 
-../G8RTOS/G8RTOS_Semaphores.h:
+../MultimodDrivers/multimod.h:
+
+../MultimodDrivers/multimod_uart.h:
+
+../MultimodDrivers/multimod_i2c.h:
 
 C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdint.h:
 
@@ -81,14 +83,6 @@ C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
 C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h:
 
-../G8RTOS/G8RTOS_CriticalSection.h:
-
-../MultimodDrivers/multimod.h:
-
-../MultimodDrivers/multimod_uart.h:
-
-../MultimodDrivers/multimod_i2c.h:
-
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memmap.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_gpio.h:
@@ -96,8 +90,6 @@ C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_gpio.h:
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/i2c.h:
 
 ../MultimodDrivers/multimod_BMI160.h:
-
-C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_types.h:
 
@@ -139,11 +131,13 @@ C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/machine/_limits.h
 
 ../G8RTOS/G8RTOS_IPC.h:
 
+../G8RTOS/G8RTOS_Semaphores.h:
+
+../G8RTOS/G8RTOS_CriticalSection.h:
+
 ../G8RTOS/G8RTOS_Scheduler.h:
 
 ../G8RTOS/G8RTOS_Structures.h:
-
-../stb_bitwise.h:
 
 C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdio.h:
 

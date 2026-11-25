@@ -19,7 +19,6 @@ MultimodDrivers/src/multimod_i2c.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverli
 MultimodDrivers/src/multimod_i2c.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h
 MultimodDrivers/src/multimod_i2c.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h
 MultimodDrivers/src/multimod_i2c.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/pin_map.h
-MultimodDrivers/src/multimod_i2c.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h
 MultimodDrivers/src/multimod_i2c.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_i2c.h
 
 ../MultimodDrivers/src/multimod_i2c.c:
@@ -59,8 +58,6 @@ C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h:
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/pin_map.h:
-
-C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_i2c.h:
 

@@ -34,6 +34,8 @@ ORDERED_OBJS += \
 "./MultimodDrivers/src/multimod_joystick.obj" \
 "./MultimodDrivers/src/multimod_spi.obj" \
 "./MultimodDrivers/src/multimod_uart.obj" \
+"./Tivanstein/src/ts_map.obj" \
+"./Tivanstein/src/ts_player.obj" \
 "../tm4c123gh6pm.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -51,11 +53,13 @@ RMDIR := RMDIR /S/Q
 -include MiscFunctions/LinAlg/src/subdir_vars.mk
 -include MiscFunctions/Shapes/src/subdir_vars.mk
 -include MultimodDrivers/src/subdir_vars.mk
+-include Tivanstein/src/subdir_vars.mk
 -include subdir_rules.mk
 -include G8RTOS/src/subdir_rules.mk
 -include MiscFunctions/LinAlg/src/subdir_rules.mk
 -include MiscFunctions/Shapes/src/subdir_rules.mk
 -include MultimodDrivers/src/subdir_rules.mk
+-include Tivanstein/src/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -152,29 +156,29 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-lab4.out 
+Tivanstein.out 
 
 EXE_OUTPUTS__QUOTED += \
-"lab4.out" 
+"Tivanstein.out" 
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "lab4.out"
+	@$(MAKE) --no-print-directory -Onone "Tivanstein.out"
 
 # Tool invocations
-lab4.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+Tivanstein.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab4.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab4_linkInfo.xml" --rom_model -o "lab4.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --c99 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Tivanstein.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Tivanstein_linkInfo.xml" --rom_model -o "Tivanstein.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "threads.obj" "tm4c123gh6pm_startup_ccs.obj" "uartstdio.obj" "G8RTOS\src\G8RTOS_CriticalSection.obj" "G8RTOS\src\G8RTOS_IPC.obj" "G8RTOS\src\G8RTOS_Scheduler.obj" "G8RTOS\src\G8RTOS_SchedulerASM.obj" "G8RTOS\src\G8RTOS_Semaphores.obj" "MiscFunctions\LinAlg\src\linalg.obj" "MiscFunctions\LinAlg\src\quaternions.obj" "MiscFunctions\LinAlg\src\vect3d.obj" "MiscFunctions\Shapes\src\cube.obj" "MultimodDrivers\src\multimod_BME280.obj" "MultimodDrivers\src\multimod_BMI160.obj" "MultimodDrivers\src\multimod_LaunchpadButtons.obj" "MultimodDrivers\src\multimod_LaunchpadLED.obj" "MultimodDrivers\src\multimod_OPT3001.obj" "MultimodDrivers\src\multimod_ST7789.obj" "MultimodDrivers\src\multimod_buttons.obj" "MultimodDrivers\src\multimod_i2c.obj" "MultimodDrivers\src\multimod_joystick.obj" "MultimodDrivers\src\multimod_spi.obj" "MultimodDrivers\src\multimod_uart.obj" 
-	-$(RM) "main.d" "threads.d" "tm4c123gh6pm_startup_ccs.d" "uartstdio.d" "G8RTOS\src\G8RTOS_IPC.d" "G8RTOS\src\G8RTOS_Scheduler.d" "G8RTOS\src\G8RTOS_Semaphores.d" "MiscFunctions\LinAlg\src\linalg.d" "MiscFunctions\LinAlg\src\quaternions.d" "MiscFunctions\LinAlg\src\vect3d.d" "MiscFunctions\Shapes\src\cube.d" "MultimodDrivers\src\multimod_BME280.d" "MultimodDrivers\src\multimod_BMI160.d" "MultimodDrivers\src\multimod_LaunchpadButtons.d" "MultimodDrivers\src\multimod_LaunchpadLED.d" "MultimodDrivers\src\multimod_OPT3001.d" "MultimodDrivers\src\multimod_ST7789.d" "MultimodDrivers\src\multimod_buttons.d" "MultimodDrivers\src\multimod_i2c.d" "MultimodDrivers\src\multimod_joystick.d" "MultimodDrivers\src\multimod_spi.d" "MultimodDrivers\src\multimod_uart.d" 
+	-$(RM) "main.obj" "threads.obj" "tm4c123gh6pm_startup_ccs.obj" "uartstdio.obj" "G8RTOS\src\G8RTOS_CriticalSection.obj" "G8RTOS\src\G8RTOS_IPC.obj" "G8RTOS\src\G8RTOS_Scheduler.obj" "G8RTOS\src\G8RTOS_SchedulerASM.obj" "G8RTOS\src\G8RTOS_Semaphores.obj" "MiscFunctions\LinAlg\src\linalg.obj" "MiscFunctions\LinAlg\src\quaternions.obj" "MiscFunctions\LinAlg\src\vect3d.obj" "MiscFunctions\Shapes\src\cube.obj" "MultimodDrivers\src\multimod_BME280.obj" "MultimodDrivers\src\multimod_BMI160.obj" "MultimodDrivers\src\multimod_LaunchpadButtons.obj" "MultimodDrivers\src\multimod_LaunchpadLED.obj" "MultimodDrivers\src\multimod_OPT3001.obj" "MultimodDrivers\src\multimod_ST7789.obj" "MultimodDrivers\src\multimod_buttons.obj" "MultimodDrivers\src\multimod_i2c.obj" "MultimodDrivers\src\multimod_joystick.obj" "MultimodDrivers\src\multimod_spi.obj" "MultimodDrivers\src\multimod_uart.obj" "Tivanstein\src\ts_map.obj" "Tivanstein\src\ts_player.obj" 
+	-$(RM) "main.d" "threads.d" "tm4c123gh6pm_startup_ccs.d" "uartstdio.d" "G8RTOS\src\G8RTOS_IPC.d" "G8RTOS\src\G8RTOS_Scheduler.d" "G8RTOS\src\G8RTOS_Semaphores.d" "MiscFunctions\LinAlg\src\linalg.d" "MiscFunctions\LinAlg\src\quaternions.d" "MiscFunctions\LinAlg\src\vect3d.d" "MiscFunctions\Shapes\src\cube.d" "MultimodDrivers\src\multimod_BME280.d" "MultimodDrivers\src\multimod_BMI160.d" "MultimodDrivers\src\multimod_LaunchpadButtons.d" "MultimodDrivers\src\multimod_LaunchpadLED.d" "MultimodDrivers\src\multimod_OPT3001.d" "MultimodDrivers\src\multimod_ST7789.d" "MultimodDrivers\src\multimod_buttons.d" "MultimodDrivers\src\multimod_i2c.d" "MultimodDrivers\src\multimod_joystick.d" "MultimodDrivers\src\multimod_spi.d" "MultimodDrivers\src\multimod_uart.d" "Tivanstein\src\ts_map.d" "Tivanstein\src\ts_player.d" 
 	-$(RM) "G8RTOS\src\G8RTOS_CriticalSection.d" "G8RTOS\src\G8RTOS_SchedulerASM.d" 
 	-@echo 'Finished clean'
 	-@echo ' '

@@ -76,8 +76,8 @@
 
 
 // ST7789 Boundaries
-#define X_MAX                       240
 #define Y_MAX                       320
+#define X_MAX                       240
 
 // COLORS
 #define ST7789_BLACK                0x0000
@@ -108,6 +108,7 @@ void ST7789_Fill(uint16_t color);
 void ST7789_DrawPixel(uint16_t x, uint16_t y, uint16_t color);
 void ST7789_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
 void ST7789_DrawRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16_t color);
+void ST7789_DrawAngledLine(uint16_t x, uint16_t y, float angle, uint16_t length, uint16_t color);
 
 /********************************Public Functions***********************************/
 
